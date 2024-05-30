@@ -11,16 +11,18 @@ The directory structure of this repository is as follows:
 
 ```plaintext
 .
-├── .gitignore
 ├── assets
-├── README.md
-└── vpp
+├── vpp
+├── .gitignore
+├── DIRs.md
+└── README.md
 ```
 
-- `.gitignore`: Git ignore file
 - `assets`: static files like images, diagrams, PDFs, etc.
-- `README.md`: this file
 - `vpp`: Visual Paradigm project files
+- `.gitignore`: Git ignore file
+- `DIRs.md`: Design Input Requirements table
+- `README.md`: this file
 
 ## Task Definition
 
