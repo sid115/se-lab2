@@ -1,0 +1,52 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Dependency files
+*.d
+
+# IDE generated files
+*.ide
+*.ipch
+*.opensdf
+*.sdf
+*.suo
+*.sz
+*.user
+.cache/
+.vs/
+.vscode/
+compile_commands.json
+
+# Build directories
+Debug/
+Release/
+build/
+out/
+output/
+
+# Visual Paradigm backup and lock files
+*.vpp.bak_*
+*.vpp.lck
