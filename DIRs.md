@@ -7,7 +7,7 @@
 | IF1a | 1 | Scanner-IF, data transfer | ASCII-string, variable parameter/configurable | With IF1a. |
 | IF1b | 1 | Scanner-IF, log | RS232, variable parameter/configurable | With IF1a. |
 | IF1c | 1 | Scanner-IF, setup | Scanner parameterization through parameter file of cash register system | By inspection if scanner reinitializes at transfer of parameter file from cash register system. |
-| IF2  | Conveyer Belt System betrachten wir losgeloest |
+| IF2 | | | | Conveyor system is considered an independent system |
 | IF3a | 1 | ERP- IF, invoice | Transfer invoice of each payment transaction to ERP (invoice number, invoice items, item amounts, total amount) | By inspection if invoice is issued for each purchase and transferred completely and semantically correct to ERP-System. |
 | IF3b | 1 | ERP- IF, payment | Transfer payment receipt for each invoice to ERP (invoice number, total amount, customer identification) | By inspection if payment receipt is issued for each purchase and if it is transferred completely and semantically correct to ERP-System. |
 | IF3c | 1 | ERP- IF, price list | Receive price list of products from ERP (for each item in price list: product-ID, product description, product price, product valid through, other information optional). List consists of a minimum of 0 and a maximum of 9999 items. | By inspection if price lists of 0, 1, 2, 10, 1000, 9999 products are received completely and semantically correct from ERP-System. By inspection if invalid product data is detected and rejected selectively. |
@@ -22,7 +22,7 @@
 | IF7a | 1 | Card Terminal, protocol | RS232, configurable | With IF7b. |
 | IF7b | 1 | Card Terminal, payment transaction | Payment transaction process triggered by command. Result delivered by synchronous return value. Possible values: "successfully processed payment", "payment process cancelled". Transfer information about cancellation cause as character string. At least 10€. | Emulate Debit Card Terminal. Check payment processes: 1. Payment process successful, 2. Timeout, 3. Abort process because PIN-code is incorrect (only if PIN-code used), 4. Abort process because debit card is invalid/not legible, 5. Abort process because account balance is insufficient. |
 | IF7c | 1 | Card Terminal, setup | Configuration of Debit Card Terminal through parameter file from cash register system | By inspection if Debit Card Terminal reinitializes at transfer of parameter file from cash register system. |
-| IF8a | Wir packen Debit und Credit Card zusammen als ein Terminal, da uns egal ist, wie die Bank das abrechnet |
+| IF8a | | | | Credit and debit cards are processed as a single system. |
 | IF9a | 1 | Programming device | RS232, configurable | With IF9b |
 | IF9b | 1 | Programming device terminal | Fully access on cash register system as an administrator via programming device | By inspection if programming device adjusts cash register system functions and if upload/download of parameter files is possible |
 
@@ -30,7 +30,7 @@
 
 | Tag | Prio | Attribute | Target Description | Verification Method (how to be measured) |
 | --- | ---- | --------- | ------------------ | ---------------------------------------- |
-| F1a | Da wir das Conveyer Belt System losgeloest betrachten und immer nur ein Kassiervorgang gleichzeitig stattfinden kann, ist das hier irrelevant geworden|
+| F1a | | | | See IF2 |
 | F2a | 1 | Invoice calculation | Priority rule (if prices are distinct): price on product item, price on shelf, prices in cash register system. Always apply most favorable price and consider discounts. Error rate < 1% | Test with at least 100 product items. |
 | F2b | 1 | Invoice calculation | Distinguish product lot prices and/or product specimen prices by EPC | By inspection, if ERP system distinguishes different product items per product lot and/or product specimen and if both kinds of product items are detectable through RFID and/or bar code. |
 | F3a | 1 | Inventory Management | Frequently generate packing slips of all sold product items and send them to the local inventory management system. Keep unsent packing slips in the cash register system until receiving an acknowledgement from the inventory management system. | Inject list of virtually sold product items into cash register system. Generate and transfer packing slip (1) triggered manually, (2) triggered by timer. Shut down and reboot cash register system. Check, if unsent packing slips are transferred before system shut down. |
