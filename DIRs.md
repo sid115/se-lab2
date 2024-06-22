@@ -4,8 +4,9 @@
 
 | Tag | Prio | Attribute | Target Description | Verification Method (how to be measured) |
 | --- | ---- | --------- | ------------------ | ---------------------------------------- |
-| IF1a | 1 | Scanner-IF, data transfer | ASCII-string, variable parameter/configurable | With IF1a. |
-| IF1b | 1 | Scanner-IF, log | RS232, variable parameter/configurable | With IF1a. |
+| IF1a1 | 1 | Scanner-IF, codes | EAN-Coding (EAN-8, EAN-13, EAN-128), variable parameter/configurable | By inspection, if 100 items detected and transferred to the cash register system correctly. |
+| IF1a2 | 1 | Scanner-IF, data transfer | ASCII-string, variable parameter/configurable | With IF1a1. |
+| IF1b | 1 | Scanner-IF, log | RS232, variable parameter/configurable | With IF1a1. |
 | IF1c | 1 | Scanner-IF, setup | Scanner parameterization through parameter file of cash register system | By inspection if scanner reinitializes at transfer of parameter file from cash register system. |
 | IF2 | | | | Conveyor system is considered an independent system |
 | IF3a | 1 | ERP- IF, invoice | Transfer invoice of each payment transaction to ERP (invoice number, invoice items, item amounts, total amount) | By inspection if invoice is issued for each purchase and transferred completely and semantically correct to ERP-System. |
